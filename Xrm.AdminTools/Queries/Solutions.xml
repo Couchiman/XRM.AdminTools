@@ -1,0 +1,30 @@
+<fetch distinct="true" no-lock="true">
+  <entity name="solution">
+    <attribute name="description" />
+    <attribute name="friendlyname" />
+    <attribute name="publisherid" />
+    <attribute name="solutiontype" />
+    <attribute name="version" />
+    <attribute name="versionnumber" />
+    <attribute name="uniquename" />
+    <attribute name="installedon" />
+    <attribute name="createdon" />
+    <attribute name="solutionid" />
+    <filter type="and">
+      <condition attribute="ismanaged" operator="eq" value="0" />
+      <filter type="and">
+        <condition attribute="uniquename" operator="neq" value="Active" />
+        <condition attribute="uniquename" operator="neq" value="Default" />
+        <condition attribute="uniquename" operator="neq" value="Basic" />
+        <condition attribute="friendlyname" operator="neq" value="Common Data Services Default Solution" />
+      </filter>
+    </filter>
+    <link-entity name="publisher" from="publisherid" to="publisherid" link-type="outer" alias="publicador">
+      <attribute name="customizationoptionvalueprefix" />
+      <attribute name="customizationprefix" />
+    </link-entity>
+    <link-entity name="solutioncomponent" from="solutionid" to="solutionid">
+      <attribute name="rootcomponentbehavior" />
+    </link-entity>
+  </entity>
+</fetch>

@@ -1,0 +1,49 @@
+﻿<Window x:Class="XRM.AdminTools.ExportSolutionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XRM.AdminTools"
+        mc:Ignorable="d"
+        Title="Export Solution" Height="320" Width="628.667">
+    <Grid Margin="0,0,2,1">
+
+        <Label x:Name="lblfilenamesuffix" Content="Filename suffix" HorizontalAlignment="Left" Margin="27,53,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
+
+
+        <Button x:Name="btnExport" Content="Export" HorizontalAlignment="Left" Margin="124,239,0,0" VerticalAlignment="Top" Width="200" Click="btnExport_Click" FontWeight="Bold"/>
+        <TextBox x:Name="txtExportPath" HorizontalAlignment="Left" Height="23" Margin="107,151,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162"/>
+        <Label x:Name="lblPath" Content="Export Folder" HorizontalAlignment="Left" Margin="27,147,0,0" VerticalAlignment="Top" />
+        <Button x:Name="btnPath" Content="..." HorizontalAlignment="Left" Margin="274,152,0,0" VerticalAlignment="Top" Width="22" Click="btnPath_Click"/>
+        <StackPanel Margin="393,10,30,44" Orientation="Vertical" Name="spAdvancedOptions" Style="{DynamicResource spStyleAdvanced}">
+            <StackPanel.Resources>
+                <Style x:Key="spStyleAdvanced" TargetType="{x:Type StackPanel}">
+                    <Setter Property="Background" Value="LightBlue" />
+                </Style>
+            </StackPanel.Resources>
+
+
+            <Label x:Name="lblAdvancedOptions" Content="Advanced Options" HorizontalAlignment="Left" VerticalAlignment="Top" FontStyle="Italic"/>
+            <Separator/>
+            <CheckBox x:Name="chkAutoNumbering" Content="AutoNumbering Settings" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"/>
+            <CheckBox x:Name="chkRelationshipRoles" Content="Relationship Roles" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"/>
+            <CheckBox x:Name="chkExportOutlookSynchronizationSettings" Content="Outlook Synchronization Settings" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="False"/>
+            <CheckBox x:Name="chkExportEmailTrackingSettings" Content="Email Tracking Settings" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="False"/>
+            <CheckBox x:Name="chkExportCalendarSettings" Content="Calendar Settings" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"/>
+            <CheckBox x:Name="chkExportGeneralSettings" Content="General Settings" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="True"/>
+            <CheckBox x:Name="chkExportCustomizationSettings" Content="Customization Settings" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="False"/>
+            <CheckBox x:Name="chkExportExternalApplications" Content="External Applications" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="False"/>
+            <CheckBox x:Name="chkExportComponentsParams" Content="Component Params" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="False"/>
+            <CheckBox x:Name="chkExportMarketingSettings" Content="Marketing Settings" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="False"/>
+            <CheckBox x:Name="chkExportSales" Content="Sales Settings" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="False"/>
+            <CheckBox x:Name="chkExportIsvConfig" Content="Isv Configuration" HorizontalAlignment="Left" VerticalAlignment="Top" IsChecked="False"/>
+        </StackPanel>
+        <RadioButton x:Name="rdNone" GroupName="rdGroupSuffix" Content="None" HorizontalAlignment="Left" Margin="35,84,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdFully" GroupName="rdGroupSuffix" Content="Major.minor.build.revision" HorizontalAlignment="Left" Margin="112,84,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdManaged" GroupName="rdGroupType" Content="Managed" HorizontalAlignment="Left" Margin="35,33,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdUnManaged" GroupName="rdGroupType" Content="UnManaged" HorizontalAlignment="Left" Margin="112,33,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSolutionType" Content="Solution Export Type" HorizontalAlignment="Left" Margin="27,3,0,0" VerticalAlignment="Top" FontStyle="Italic" Width="153"/>
+        <CheckBox x:Name="chkExportDateFolder" Content="Export date folder" HorizontalAlignment="Left" Margin="31,180,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblExportPathOptions" Content="Solution Export Options" HorizontalAlignment="Left" Margin="27,116,0,0" VerticalAlignment="Top" FontStyle="Italic" Width="153"/>
+    </Grid>
+</Window>
